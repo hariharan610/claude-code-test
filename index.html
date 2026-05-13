@@ -6,1063 +6,1039 @@
 <title>MOS Training — App Mood Board</title>
 <style>
   :root {
-    --bg: #f5f4f2;
+    --bg: #f2f1ef;
     --surface: #ffffff;
-    --border: #e2e0db;
-    --text: #1a1a1a;
-    --muted: #6b6b6b;
-    --accent: #1c3d5a;
-    --tag-a: #e8f0fe;
-    --tag-a-text: #1a56db;
-    --tag-b: #fef3c7;
-    --tag-b-text: #92400e;
-    --tag-c: #f0fdf4;
-    --tag-c-text: #166534;
-    --tag-d: #fdf4ff;
-    --tag-d-text: #7e22ce;
+    --border: #e0deda;
+    --text: #111111;
+    --sub: #444444;
+    --muted: #888888;
+    --accent: #1a3850;
+    --accent2: #2563eb;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.5;
-  }
+  /* HEADER */
+  .hdr { background: var(--accent); color: #fff; padding: 52px 64px 44px; }
+  .hdr-eye { font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; opacity: .55; margin-bottom: 12px; }
+  .hdr h1 { font-size: 40px; font-weight: 800; letter-spacing: -.025em; margin-bottom: 10px; line-height: 1.1; }
+  .hdr-sub { font-size: 15px; opacity: .7; max-width: 620px; line-height: 1.7; }
 
-  /* ── HEADER ── */
-  .header {
-    background: var(--accent);
-    color: #fff;
-    padding: 48px 60px 40px;
-  }
-  .header-eyebrow {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    opacity: .65;
-    margin-bottom: 10px;
-  }
-  .header h1 {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: -.02em;
-    margin-bottom: 8px;
-  }
-  .header p {
-    font-size: 15px;
-    opacity: .75;
-    max-width: 640px;
-    line-height: 1.6;
-  }
+  /* DIRECTION BAR */
+  .dir-bar { background: #fff; border-bottom: 1px solid var(--border); padding: 16px 64px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .dir-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+  .tag { padding: 4px 13px; border-radius: 999px; font-size: 11.5px; font-weight: 600; }
+  .t-a { background: #dbeafe; color: #1d4ed8; }
+  .t-b { background: #dcfce7; color: #15803d; }
+  .t-c { background: #1e293b; color: #94a3b8; }
+  .t-d { background: #fef9c3; color: #854d0e; }
+  .t-e { background: #fce7f3; color: #9d174d; }
 
-  /* ── DIRECTION KEY ── */
-  .key-bar {
-    background: #fff;
-    border-bottom: 1px solid var(--border);
-    padding: 18px 60px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-  }
-  .key-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-right: 6px;
-  }
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .pill-a { background: var(--tag-a); color: var(--tag-a-text); }
-  .pill-b { background: var(--tag-b); color: var(--tag-b-text); }
-  .pill-c { background: var(--tag-c); color: var(--tag-c-text); }
-  .pill-d { background: var(--tag-d); color: var(--tag-d-text); }
+  /* MAIN */
+  main { padding: 56px 64px 80px; }
 
-  /* ── CONTENT ── */
-  .content { padding: 52px 60px; }
+  /* SECTION */
+  .sec { margin-bottom: 80px; }
+  .sec-head { display: flex; align-items: flex-start; gap: 18px; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  .sec-num { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+  .sec-num.dark { background: #1e293b; }
+  .sec-num.pink { background: #be185d; }
+  .sec-num.green { background: #15803d; }
+  .sec-num.amber { background: #b45309; }
+  .sec-meta { flex: 1; }
+  .sec-cat { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+  .sec-title { font-size: 24px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 6px; }
+  .sec-desc { font-size: 13.5px; color: var(--sub); line-height: 1.65; max-width: 760px; }
 
-  /* ── SECTION ── */
-  .section { margin-bottom: 72px; }
-  .section-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
-  }
-  .section-num {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .section-meta { flex: 1; }
-  .section-category {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
-  .section-title {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -.01em;
-    margin-bottom: 6px;
-  }
-  .section-desc {
-    font-size: 14px;
-    color: var(--muted);
-    max-width: 700px;
-    line-height: 1.6;
-  }
+  /* CALLOUT */
+  .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent2); border-radius: 8px; padding: 14px 18px; margin-bottom: 22px; display: flex; gap: 12px; }
+  .callout-ico { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
+  .callout-txt { font-size: 13px; color: var(--sub); line-height: 1.55; }
+  .callout-txt strong { color: var(--text); display: block; margin-bottom: 3px; font-size: 13px; }
 
-  /* ── GRID ── */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: 20px;
-  }
-  .grid-wide {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  }
+  /* GRID */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: 18px; }
+  .grid-wide { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 
-  /* ── CARD ── */
-  .card {
-    background: var(--surface);
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: box-shadow .18s ease, transform .18s ease;
-  }
-  .card:hover {
-    box-shadow: 0 8px 28px rgba(0,0,0,.10);
-    transform: translateY(-2px);
-  }
-  .card-img-wrap {
-    position: relative;
-    background: #f0eff0;
-    overflow: hidden;
-    aspect-ratio: 9/16;
-  }
-  .card-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-  }
-  .card-body {
-    padding: 12px 14px 14px;
-  }
-  .card-app {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 3px;
-  }
-  .card-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.35;
-    margin-bottom: 4px;
-  }
-  .card-note {
-    font-size: 11.5px;
-    color: var(--muted);
-    line-height: 1.45;
-  }
-  .card-tag {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 2px 9px;
-    border-radius: 999px;
-    font-size: 10.5px;
-    font-weight: 600;
-  }
+  /* CARD */
+  .card { background: var(--surface); border-radius: 14px; border: 1px solid var(--border); overflow: hidden; transition: box-shadow .15s, transform .15s; cursor: default; }
+  .card:hover { box-shadow: 0 10px 36px rgba(0,0,0,.11); transform: translateY(-3px); }
+  .card-img { position: relative; background: #eae9e7; aspect-ratio: 9/16; overflow: hidden; }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .card-body { padding: 12px 14px 14px; }
+  .card-app { font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .card-title { font-size: 12.5px; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 4px; }
+  .card-note { font-size: 11px; color: var(--sub); line-height: 1.45; }
+  .card-tag { display: inline-block; margin-top: 8px; padding: 2px 9px; border-radius: 999px; font-size: 10px; font-weight: 700; }
 
-  /* ── STYLE CALLOUT ── */
-  .style-callout {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 20px;
-    margin-bottom: 20px;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-  }
-  .callout-icon {
-    font-size: 22px;
-    line-height: 1;
-    flex-shrink: 0;
-  }
-  .callout-text h4 {
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 3px;
-  }
-  .callout-text p {
-    font-size: 12.5px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
+  /* DIVIDER */
+  .divider { height: 1px; background: var(--border); margin: 0 0 80px; }
 
-  /* ── DIVIDER ── */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 0 0 72px;
-  }
+  /* STYLE COMPARE ROW */
+  .compare { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 22px; }
+  .compare-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+  .compare-item h4 { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+  .compare-item p { font-size: 12px; color: var(--sub); line-height: 1.5; }
+  .compare-item .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: middle; }
 
-  /* ── FOOTER ── */
-  .footer {
-    border-top: 1px solid var(--border);
-    padding: 28px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #fff;
-  }
-  .footer p { font-size: 13px; color: var(--muted); }
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 24px 64px; display: flex; justify-content: space-between; background: #fff; font-size: 12.5px; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 800px) {
-    .header, .key-bar, .content, .footer { padding-left: 24px; padding-right: 24px; }
-    .header h1 { font-size: 26px; }
-    .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  @media (max-width: 900px) {
+    .hdr, .dir-bar, main, footer { padding-left: 24px; padding-right: 24px; }
+    .hdr h1 { font-size: 28px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); }
+    .compare { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="header-eyebrow">MOS Training — NVQ Evidence Capture App</div>
-  <h1>Visual Direction Mood Board</h1>
-  <p>A curated reference of UI styles and patterns to inform the design direction. Screens are grouped by visual style and key feature type. Share with the client to choose a direction before design begins.</p>
+<header class="hdr">
+  <div class="hdr-eye">MOS Training — NVQ Evidence Capture App for Electricians &amp; Construction</div>
+  <h1>Visual Direction<br>Mood Board</h1>
+  <p class="hdr-sub">70+ curated screens from real apps, grouped by visual style and key screen type. Share with the client to lock in a design direction before work begins. All screens sourced from Mobbin.</p>
 </header>
 
-<!-- DIRECTION KEY -->
-<div class="key-bar">
-  <span class="key-label">Visual Directions</span>
-  <span class="pill pill-a">A — Clean Minimal Light</span>
-  <span class="pill pill-b">B — Structured Utility</span>
-  <span class="pill pill-c">C — Modern Dark</span>
-  <span class="pill pill-d">D — Enterprise Compliance</span>
+<div class="dir-bar">
+  <span class="dir-label">Visual Directions →</span>
+  <span class="tag t-a">A — Clean Minimal Light</span>
+  <span class="tag t-b">B — Structured Utility / Trade</span>
+  <span class="tag t-c">C — Dark High Contrast</span>
+  <span class="tag t-d">D — Enterprise Compliance</span>
+  <span class="tag t-e">E — Step-by-Step Wizard</span>
 </div>
 
-<main class="content">
+<main>
 
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- DIRECTION A — CLEAN MINIMAL LIGHT                   -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-num">A</div>
-      <div class="section-meta">
-        <div class="section-category">Visual Direction A</div>
-        <h2 class="section-title">Clean Minimal Light</h2>
-        <p class="section-desc">
-          Pure white and warm off-white backgrounds, generous whitespace, soft card shadows, calm neutral typography. Feels approachable and unintimidating for non-technical users. Progress is shown through simple cards and progress bars rather than complex data visualisations.
-        </p>
+<!-- ═══════════════════════════════════════════════ -->
+<!-- STYLE COMPARISON OVERVIEW                       -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="compare">
+  <div class="compare-item">
+    <h4><span class="dot" style="background:#3b82f6;"></span>Direction A — Clean Minimal</h4>
+    <p>Pure whites, warm off-whites, generous space, soft shadows. Approachable for non-technical users. GOV.UK / NHS digital feel. <strong>Recommended</strong> for building site tradespeople.</p>
+  </div>
+  <div class="compare-item">
+    <h4><span class="dot" style="background:#22c55e;"></span>Direction B — Utility / Trade</h4>
+    <p>Green or blue accents, dense functional layouts, large touch targets. Language of Jobber, Xero, ServiceTitan. Feels like it was <strong>built for the job</strong>.</p>
+  </div>
+  <div class="compare-item">
+    <h4><span class="dot" style="background:#475569;"></span>Direction C — Dark / Contrast</h4>
+    <p>Near-black backgrounds, white text, vivid accents. OLED-optimised. Best <strong>outdoor sunlight readability</strong> on modern devices. Premium, technical feel.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- A — CLEAN MINIMAL LIGHT                         -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num">A</div>
+    <div class="sec-meta">
+      <div class="sec-cat">Visual Direction A</div>
+      <h2 class="sec-title">Clean Minimal Light</h2>
+      <p class="sec-desc">Pure white and warm cream backgrounds, generous whitespace, card-based layouts, calm typography. Feels unintimidating, professional, and trustworthy — the same aesthetic used by GOV.UK, HMRC, and NHS digital services. Reduces cognitive load for non-technical users on site.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="callout-ico">💡</span>
+    <div class="callout-txt"><strong>Recommended direction for MOS Training</strong>Tradespeople on building sites benefit most from large, readable text, obvious touch targets, and a calm aesthetic that keeps focus on the task — not the interface.</div>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/9WBEya9h" loading="lazy" alt="Noom today dashboard"></div>
+      <div class="card-body">
+        <div class="card-app">Noom</div>
+        <div class="card-title">Today's Dashboard</div>
+        <div class="card-note">Warm off-white canvas, card rows with coloured icons, clear daily progress. Feels human and achievable.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="style-callout">
-      <span class="callout-icon">💡</span>
-      <div class="callout-text">
-        <h4>Why this direction works for MOS Training</h4>
-        <p>Tradespeople on site don't want complexity. A clean light interface reduces cognitive load, makes large touch targets obvious, and feels trustworthy — similar to what HMRC, NHS, and GOV.UK digital services use. Recommended direction.</p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/wkbxafOh" loading="lazy" alt="Noom progress cards"></div>
+      <div class="card-body">
+        <div class="card-app">Noom</div>
+        <div class="card-title">Progress Card List</div>
+        <div class="card-note">Section header → task cards → inline progress bar → CTA. Direct NVQ unit template.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/9WBEya9h" alt="Noom today's dashboard" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Noom</div>
-          <div class="card-title">Today's Dashboard</div>
-          <div class="card-note">Warm off-white base, labelled card rows with colour-coded icons. Clear progress at a glance.</div>
-          <span class="card-tag pill pill-a">Direction A</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/wkbxafOh" alt="Noom today's progress" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Noom</div>
-          <div class="card-title">Progress Card List</div>
-          <div class="card-note">Each task as a card row with inline progress bar. Clean hierarchy: section header → items → CTA.</div>
-          <span class="card-tag pill pill-a">Direction A</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/Unr5DFuZ" alt="Asana home dashboard" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Asana</div>
-          <div class="card-title">Home Dashboard</div>
-          <div class="card-note">Personalised greeting + task summary cards. Soft white, rounded cards, clear CTA button.</div>
-          <span class="card-tag pill pill-a">Direction A</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/LcRrvGyC" alt="Things 3 minimal home" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Things 3</div>
-          <div class="card-title">Ultra-Minimal Home</div>
-          <div class="card-note">Possibly the cleanest task app nav ever made. Pure white, large readable text, zero visual clutter.</div>
-          <span class="card-tag pill pill-a">Direction A</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/aDoVVEK9" alt="Superlist clean home" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Superlist</div>
-          <div class="card-title">Clean Home Navigation</div>
-          <div class="card-note">White canvas, sparse icon nav, subtle section groupings. Effortlessly simple to understand.</div>
-          <span class="card-tag pill pill-a">Direction A</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/yNtpYZJ0" alt="Tiimo add task form" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Tiimo</div>
-          <div class="card-title">Add Task / Job Card Form</div>
-          <div class="card-note">Light grey background with floating white cards per field. Clear label-value layout, very easy to scan.</div>
-          <span class="card-tag pill pill-a">Direction A</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/K6cBuAM5" alt="Todoist today list" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Todoist</div>
-          <div class="card-title">Today's Task List</div>
-          <div class="card-note">Ultra-readable list with coloured priority circles, metadata below each item. Clean + information-rich.</div>
-          <span class="card-tag pill pill-a">Direction A</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/6brdsbai" alt="Todoist projects list" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Todoist</div>
-          <div class="card-title">Project / Job List</div>
-          <div class="card-note">Row-based list with counts, light neutral palette. Direct analogue for a list of job cards or NVQ units.</div>
-          <span class="card-tag pill pill-a">Direction A</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- DIRECTION B — STRUCTURED UTILITY                    -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-num">B</div>
-      <div class="section-meta">
-        <div class="section-category">Visual Direction B</div>
-        <h2 class="section-title">Structured Utility App</h2>
-        <p class="section-desc">
-          Designed for people who do tasks for a living — field service, trades, and gig economy workers. Prominent CTAs, structured form layouts, strong colour accents (often green or blue) to signal actions. Feels purposeful and business-like rather than decorative.
-        </p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/zvF6gE95" loading="lazy" alt="Noom journey map"></div>
+      <div class="card-body">
+        <div class="card-app">Noom</div>
+        <div class="card-title">Journey / Roadmap View</div>
+        <div class="card-note">Vertical milestone path, filled vs locked steps. Maps directly to NVQ unit completion flow.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="style-callout">
-      <span class="callout-icon">🔧</span>
-      <div class="callout-text">
-        <h4>Job card creation inspiration</h4>
-        <p>Jobber is a real field-service app used by tradespeople. Its UI language — green accents, client/address/date rows — directly mirrors what a MOS job card would look like. Strong reference for the job creation flow.</p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/Unr5DFuZ" loading="lazy" alt="Asana home"></div>
+      <div class="card-body">
+        <div class="card-app">Asana</div>
+        <div class="card-title">Home Dashboard</div>
+        <div class="card-note">Personalised greeting, task cards, soft white. Clean section groupings with gentle icon accents.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/xVZmHilg" alt="Jobber new task" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Jobber</div>
-          <div class="card-title">New Task Form</div>
-          <div class="card-note">Client name, site address, date, schedule — exactly the anatomy of a MOS job card. Green accent, clean form rows.</div>
-          <span class="card-tag pill pill-b">Direction B</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/5yZ1QnD9" alt="Jobber new job with calendar" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Jobber</div>
-          <div class="card-title">New Job + Calendar</div>
-          <div class="card-note">Line items, schedule date picker, save CTA. Structured, dense, but still readable on a building site screen.</div>
-          <span class="card-tag pill pill-b">Direction B</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/fTVVYUnD" alt="Jira task with attachment" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Jira Cloud</div>
-          <div class="card-title">Task Detail + Attachments</div>
-          <div class="card-note">Expandable description, attachments section with thumbnails, add attachment CTA. Evidence capture analogue.</div>
-          <span class="card-tag pill pill-b">Direction B</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/qW4NWaae" alt="Grok create new task" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Grok</div>
-          <div class="card-title">Create Task Form</div>
-          <div class="card-note">Card-based form with field groups (Schedule, Instructions, Notifications). Calm light grey, no visual noise.</div>
-          <span class="card-tag pill pill-b">Direction B</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/wGfpmA1B" alt="ClickUp My Work" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">ClickUp</div>
-          <div class="card-title">My Work Overview</div>
-          <div class="card-note">Scrollable date-based view with overdue/today/upcoming. Blue accent, clean row list with date anchors.</div>
-          <span class="card-tag pill pill-b">Direction B</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/U6CDNW5p" alt="Tiimo day planner" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Tiimo</div>
-          <div class="card-title">Day / Week Planner</div>
-          <div class="card-note">Weekly calendar strip, task cards below with duration and start button. Compact but tactile — good for gloves.</div>
-          <span class="card-tag pill pill-b">Direction B</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/wkbxafOh" alt="Progress task list" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Noom</div>
-          <div class="card-title">Task + Progress Rows</div>
-          <div class="card-note">Section header + card rows + progress bar + "Track More" ghost CTA. Replicable pattern for NVQ criteria.</div>
-          <span class="card-tag pill pill-b">Direction B</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- DIRECTION C — MODERN DARK / UTILITY                 -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-num">C</div>
-      <div class="section-meta">
-        <div class="section-category">Visual Direction C</div>
-        <h2 class="section-title">Modern Dark / High-Contrast Utility</h2>
-        <p class="section-desc">
-          Pure black or deep navy backgrounds with white text and bright accent colours. Popular with utility/technical apps (Starlink, Apple Fitness, Opal). Excellent outdoor readability in direct sunlight — a real advantage on building sites. Feels premium and technical.
-        </p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/LcRrvGyC" loading="lazy" alt="Things 3 minimal"></div>
+      <div class="card-body">
+        <div class="card-app">Things 3</div>
+        <div class="card-title">Ultra-Minimal Home</div>
+        <div class="card-note">Pure white, giant readable type, zero noise. Possibly the cleanest nav ever shipped on iOS.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="style-callout">
-      <span class="callout-icon">☀️</span>
-      <div class="callout-text">
-        <h4>Outdoor readability advantage</h4>
-        <p>Dark backgrounds with bright text can outperform light UIs in direct sunlight on modern OLED screens. If the target device is likely Android or iPhone with OLED, this direction has a practical benefit beyond aesthetics.</p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/uDyjsy0c" loading="lazy" alt="Things 3 project list"></div>
+      <div class="card-body">
+        <div class="card-app">Things 3</div>
+        <div class="card-title">Project List</div>
+        <div class="card-note">Project rows with dot icons + counts. "Show N more" disclosure. Direct job portfolio view.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/kxo5ZBHw" alt="Starlink home dashboard" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Starlink</div>
-          <div class="card-title">Status Dashboard</div>
-          <div class="card-note">Ultra-clean dark home with status indicator, menu rows with icons. Strong visual hierarchy. Feels technical and trusted.</div>
-          <span class="card-tag pill pill-c">Direction C</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/6LB6F52Y" alt="Opal dark blocks home" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Opal</div>
-          <div class="card-title">Dark Home Dashboard</div>
-          <div class="card-note">Deep black, rounded cards, subtle card borders. Section labels + cards per job/block. Elegant and assertive.</div>
-          <span class="card-tag pill pill-c">Direction C</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/2GXC2AqR" alt="Todoist dark sidebar" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Todoist</div>
-          <div class="card-title">Dark Project List</div>
-          <div class="card-note">Near-black background, red accent for brand colour, project list with counts. Great for a portfolio of job cards.</div>
-          <span class="card-tag pill pill-c">Direction C</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/5NhHiKCJ" alt="Apple Fitness dark summary" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Apple Fitness</div>
-          <div class="card-title">Dark Summary Dashboard</div>
-          <div class="card-note">Dark cards with neon-green accent. Sections: Sessions, Awards, Trends. Award rings map directly to NVQ unit badges.</div>
-          <span class="card-tag pill pill-c">Direction C</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/Xs1hRnrs" alt="Peloton dark progress report" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Peloton</div>
-          <div class="card-title">Dark Progress Report</div>
-          <div class="card-note">Bronze / Silver / Gold milestone badges on a dark background with progress bar. Direct analogue for NVQ outcome levels.</div>
-          <span class="card-tag pill pill-c">Direction C</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/EOtb1GGG" alt="The Outsiders dark progress" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">The Outsiders</div>
-          <div class="card-title">Dark Analytics View</div>
-          <div class="card-note">Coloured bar segments on dark background. Could represent completion % across NVQ units in a visual summary.</div>
-          <span class="card-tag pill pill-c">Direction C</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- DIRECTION D — ENTERPRISE COMPLIANCE                 -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-num">D</div>
-      <div class="section-meta">
-        <div class="section-category">Visual Direction D</div>
-        <h2 class="section-title">Enterprise Compliance Tool</h2>
-        <p class="section-desc">
-          Dense, information-forward layouts optimised for accuracy over aesthetics. Bold headlines, checkbox-heavy forms, warning banners, document upload areas, and explicit labelling (Required*, Mandatory). Used in regulated industries: fintech, HR/payroll, insurance. Signals seriousness and thoroughness.
-        </p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/aDoVVEK9" loading="lazy" alt="Superlist home"></div>
+      <div class="card-body">
+        <div class="card-app">Superlist</div>
+        <div class="card-title">Clean Nav Home</div>
+        <div class="card-note">White canvas, sparse icon nav, subtle section groupings. Effortlessly simple.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="style-callout">
-      <span class="callout-icon">📋</span>
-      <div class="callout-text">
-        <h4>When to consider this direction</h4>
-        <p>If the primary buyer is an Approved Centre or employer (rather than the apprentice) this direction can build trust with procurement teams. Risk: can feel bureaucratic for individual tradespeople using it daily on site.</p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/yNtpYZJ0" loading="lazy" alt="Tiimo add task"></div>
+      <div class="card-body">
+        <div class="card-app">Tiimo</div>
+        <div class="card-title">Add Task Form</div>
+        <div class="card-note">Light grey bg, white field cards per field group. Clean label → value rows. No visual clutter.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/MdRpIiAf" alt="Deel compliance documents" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Deel</div>
-          <div class="card-title">Compliance Documents</div>
-          <div class="card-note">Mandatory / Optional document checkboxes, amber warning notice, dashed upload zone. Familiar enterprise compliance pattern.</div>
-          <span class="card-tag pill pill-d">Direction D</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/wwnt4eg4" alt="Wealthsimple compliance checklist" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Wealthsimple</div>
-          <div class="card-title">Regulatory Checklist</div>
-          <div class="card-note">Long-form statement checkboxes, body-copy explanation, Continue CTA. Maps to NVQ assessor declaration flows.</div>
-          <span class="card-tag pill pill-d">Direction D</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/ESrBXtkG" alt="Turo safety and inspections" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Turo</div>
-          <div class="card-title">Safety & Inspections</div>
-          <div class="card-note">Requirements list, inspection submit action, resource links. Clear section-based compliance page layout.</div>
-          <span class="card-tag pill pill-d">Direction D</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/3Lr546ZW" alt="TaskRabbit safety agreement" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">TaskRabbit</div>
-          <div class="card-title">Safety Agreement Screen</div>
-          <div class="card-note">Shield icon, bold heading, tick-marked checklist, "I Accept" CTA. Honest, direct compliance confirmation.</div>
-          <span class="card-tag pill pill-d">Direction D</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/DVuaFmgy" alt="Grab Driver my courses" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Grab Driver</div>
-          <div class="card-title">My Courses + Certificates</div>
-          <div class="card-note">Courses completed count, certificate badge link. Useful reference for the learner profile / qualification overview.</div>
-          <span class="card-tag pill pill-d">Direction D</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/HtdHNFXr" alt="Wise document upload" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Wise</div>
-          <div class="card-title">Document Upload Requirements</div>
-          <div class="card-note">Numbered requirements list above upload field, uploading state indicator. Clear guidance + action. Exact pattern for evidence submission.</div>
-          <span class="card-tag pill pill-d">Direction D</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- KEY SCREENS — CRITERIA LIST GROUPED BY OUTCOMES     -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <div class="divider"></div>
-  <section class="section">
-    <div class="section-header">
-      <div class="section-num" style="background:#475569;">🗂</div>
-      <div class="section-meta">
-        <div class="section-category">Key Screen Type</div>
-        <h2 class="section-title">Criteria List — Grouped by Outcomes</h2>
-        <p class="section-desc">
-          The core of the app: a scrollable list of NVQ criteria grouped by learning outcome or unit. These references show proven patterns for accordion-grouped checklists with item counts, progress indicators, and collapsible sections.
-        </p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/K6cBuAM5" loading="lazy" alt="Todoist today"></div>
+      <div class="card-body">
+        <div class="card-app">Todoist</div>
+        <div class="card-title">Today's Task List</div>
+        <div class="card-note">Priority circles, metadata below each row, clean readable type. Information-rich yet calm.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="grid grid-wide">
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/etoWUWVx" alt="Reminders grouped list" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Apple Reminders</div>
-          <div class="card-title">Grouped Criteria List</div>
-          <div class="card-note">Bold section headers with chevron toggles, circle checkboxes, add new placeholder. Minimal and familiar iOS pattern.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/HrKrPCNX" alt="Target checklist with progress" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Target</div>
-          <div class="card-title">Checklist with Progress Bar</div>
-          <div class="card-note">"0 of 85 items completed", overall progress bar, then accordion sections each showing X/N complete. Perfect NVQ outcomes template.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/TU8lRc5y" alt="Amazon Alexa grouped checklist" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Amazon Alexa</div>
-          <div class="card-title">Categorised Checklist</div>
-          <div class="card-note">Section headers in caps with item count (2), checkbox rows, completed items in a separate group. Crisp and readable.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/akMjkGpE" alt="Khan Academy grouped courses" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Khan Academy</div>
-          <div class="card-title">Grouped Criteria Selector</div>
-          <div class="card-note">Category headers, selectable rows with checkboxes, "See All (N)" disclosure. Handles large lists gracefully.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/Vnp7YVAc" alt="Shopee accordion category list" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Shopee</div>
-          <div class="card-title">Accordion Grouped List</div>
-          <div class="card-note">Parent category with expand/collapse, indented child items each with checkbox. Clear visual depth. Maps to Unit → Criteria hierarchy.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/uDyjsy0c" alt="Things 3 anytime grouped" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Things 3</div>
-          <div class="card-title">Project-Grouped Task List</div>
-          <div class="card-note">Project name as header, items underneath, "Show N more" for long lists. Clean indentation, no visual noise.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- KEY SCREENS — EVIDENCE CAPTURE                      -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-num" style="background:#475569;">📷</div>
-      <div class="section-meta">
-        <div class="section-category">Key Screen Type</div>
-        <h2 class="section-title">Evidence Capture — Photo Upload</h2>
-        <p class="section-desc">
-          The moment the tradesperson photographs their work or uploads documentation. Key UX requirements: one-tap camera access, clear thumbnails, progress indication, and explicit "Required*" labelling to ensure nothing is missed.
-        </p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/6brdsbai" loading="lazy" alt="Todoist projects"></div>
+      <div class="card-body">
+        <div class="card-app">Todoist</div>
+        <div class="card-title">Project / Job List</div>
+        <div class="card-note">Row list with count badges, light neutral palette. Job card portfolio view analogue.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="grid grid-wide">
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/7arAEZ4S" alt="Turo photos and documents" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Turo</div>
-          <div class="card-title">Before & After Photo Evidence</div>
-          <div class="card-note">Step title, explanation text, "Before / After" sections each with "Add photos" CTA. Required* tag. Exact MOS evidence pattern.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/ZPVAFJ1s" alt="Turo add photos action sheet" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Turo</div>
-          <div class="card-title">Add Photos Action Sheet</div>
-          <div class="card-note">"Select from trip photos / Take photos / Upload from Photos" options. Clear three-choice sheet for evidence source.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/njCA2TfC" alt="Turo photo evidence required" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Turo</div>
-          <div class="card-title">Photo Evidence Required</div>
-          <div class="card-note">Section heading, description, "Photo evidence Required" label, photo upload grid slots, Continue CTA. Compliance-grade photo capture.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/m7HVGx9U" alt="Grailed photo grid selector" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Grailed</div>
-          <div class="card-title">Photo Grid Picker</div>
-          <div class="card-note">Numbered photo thumbnails in a grid, camera icon, batch add CTA. Great for selecting multiple evidence photos at once.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/pSs5us0m" alt="Binance photo evidence upload" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Binance</div>
-          <div class="card-title">Report + Photo Evidence</div>
-          <div class="card-note">Free-text details field + "Photo evidence (0/4)" section with single upload placeholder. Minimal starting state.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/sQRDe6eG" alt="Grab Driver document upload" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Grab Driver</div>
-          <div class="card-title">Document Photo Upload</div>
-          <div class="card-note">Form fields above, labelled photo upload slots below (dashed border + icon). Guidance "Document Upload Guidelines" link.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- KEY SCREENS — VOICE TO TEXT                         -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-num" style="background:#475569;">🎙️</div>
-      <div class="section-meta">
-        <div class="section-category">Key Screen Type</div>
-        <h2 class="section-title">Voice to Text — Audio Evidence</h2>
-        <p class="section-desc">
-          Tradespeople on site often have dirty or gloved hands. Voice-to-text note capture is essential for accessibility and speed. These screens show different approaches from minimal recording UIs to full live-transcription views.
-        </p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/b6SgFY2O" loading="lazy" alt="Atoms warm cream form"></div>
+      <div class="card-body">
+        <div class="card-app">Atoms</div>
+        <div class="card-title">Warm Cream Input Form</div>
+        <div class="card-note">Warm cream/ivory bg, large serif headline, pill input fields. Very premium minimal feel.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="grid grid-wide">
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/kXzpdjqx" alt="Otter.ai now recording" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Otter.ai</div>
-          <div class="card-title">Live Recording Screen</div>
-          <div class="card-note">Pure white canvas, "Now recording…" placeholder, waveform indicator, stop button. Zero distractions — one clear action.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/ln8Vg5gC" alt="Otter.ai live transcript" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Otter.ai</div>
-          <div class="card-title">Live Transcription</div>
-          <div class="card-note">Text populates in real-time as user speaks. Speaker labels, timestamp, playback bar. Clean readable transcript layout.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/842PgV0e" alt="Otter.ai edited transcript" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Otter.ai</div>
-          <div class="card-title">Editable Transcript</div>
-          <div class="card-note">Speaker-labelled paragraphs, highlighted selection, playback controls, keyboard for editing. Full review + edit workflow.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/4rNIHaUq" alt="Threads tap to transcribe" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Threads</div>
-          <div class="card-title">Tap to Transcribe</div>
-          <div class="card-note">Large grey card with "Tap to transcribe audio" prompt + playback control below. Minimal, single-action UI.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/T0mk7eWH" alt="Threads transcribing state" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Threads</div>
-          <div class="card-title">Transcribing State</div>
-          <div class="card-note">"Transcribing…" placeholder while AI processes audio. Simple loading state that builds confidence the system is working.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/i6Oop6vi" alt="Stoic voice + transcribe toggle" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">stoic.</div>
-          <div class="card-title">Record + Transcribe Toggle</div>
-          <div class="card-note">Live waveform, stop button, and a "Transcribe" toggle switch below. Gives user control over whether to auto-transcribe.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- KEY SCREENS — PROGRESS / TRAINING TRACKING          -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-num" style="background:#475569;">🏆</div>
-      <div class="section-meta">
-        <div class="section-category">Key Screen Type</div>
-        <h2 class="section-title">Progress Tracking & Qualification Status</h2>
-        <p class="section-desc">
-          The learner's overall NVQ progress — units completed, evidence submitted, assessor sign-offs pending. These screens show how other apps motivate users through visible progress, milestone badges, and clear "what's next" indicators.
-        </p>
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/6c4sOJXB" loading="lazy" alt="Coursera module progress"></div>
+      <div class="card-body">
+        <div class="card-app">Coursera</div>
+        <div class="card-title">Module Progress</div>
+        <div class="card-note">Module pill selector, "12% Complete" bar, Up Next card with action. NVQ unit progress template.</div>
+        <span class="card-tag t-a tag">Direction A</span>
       </div>
     </div>
 
-    <div class="grid grid-wide">
+  </div>
+</section>
 
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/zvF6gE95" alt="Noom course progress journey" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Noom</div>
-          <div class="card-title">Course Journey Map</div>
-          <div class="card-note">Vertical path with numbered milestones, completed (filled) vs locked (faded). Visual roadmap for NVQ units 1–N.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/6c4sOJXB" alt="Coursera module progress" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Coursera</div>
-          <div class="card-title">Module Progress Dashboard</div>
-          <div class="card-note">Module pill selector, "12% Complete" progress bar, assignments due, "Up Next" card with action button. Excellent NVQ unit template.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/LRLlOn0b" alt="Mimo certificate unlock" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Mimo</div>
-          <div class="card-title">Certificate Progress</div>
-          <div class="card-note">Badge artwork, "0% – You're on the right track!", "Get Certificate" CTA. Great motivational state for in-progress NVQ units.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/Xs1hRnrs" alt="Peloton progress milestones" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Peloton</div>
-          <div class="card-title">Milestone Level Progress</div>
-          <div class="card-note">Bronze / Silver / Gold milestones on progress bar, week-by-week session completion. Maps to NVQ competency levels.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/DVuaFmgy" alt="Grab Driver my courses" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Grab Driver</div>
-          <div class="card-title">My Courses / Certificates</div>
-          <div class="card-note">Tab selector (Courses / Learning Paths), progress stats, certificate link. Familiar learner portal layout.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img-wrap">
-          <img src="https://mobbin.com/api/mcp/short/pz1tHYwX" alt="Finch weekly milestones" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="card-app">Finch</div>
-          <div class="card-title">Weekly Milestones</div>
-          <div class="card-note">Star badge progress bar, "2 more days to earn the next star", weekly dots calendar. Lightweight motivation pattern.</div>
-        </div>
-      </div>
-
+<!-- ═══════════════════════════════════════════════ -->
+<!-- B — STRUCTURED UTILITY / TRADE                  -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num green">B</div>
+    <div class="sec-meta">
+      <div class="sec-cat">Visual Direction B</div>
+      <h2 class="sec-title">Structured Utility / Trade App</h2>
+      <p class="sec-desc">Designed for people who work for a living. Prominent green or blue CTAs, structured form rows, client/address/schedule anatomy. The visual language of Jobber, Xero, and ServiceTitan — apps electricians and plumbers already use. Feels purposeful and built-for-the-job.</p>
     </div>
-  </section>
+  </div>
+  <div class="callout">
+    <span class="callout-ico">🔧</span>
+    <div class="callout-txt"><strong>Jobber is the closest existing app to MOS Training</strong>It's a real field-service management app used by UK trades. Its job card anatomy (client name, site address, scheduled date, line items) mirrors exactly what a MOS job card needs.</div>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/xVZmHilg" loading="lazy" alt="Jobber new task"></div>
+      <div class="card-body">
+        <div class="card-app">Jobber</div>
+        <div class="card-title">New Task / Job Card</div>
+        <div class="card-note">Client, site, date, schedule rows. Exact MOS job card anatomy. Green accent, clean form rows.</div>
+        <span class="card-tag t-b tag">Direction B</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/5yZ1QnD9" loading="lazy" alt="Jobber job + calendar"></div>
+      <div class="card-body">
+        <div class="card-app">Jobber</div>
+        <div class="card-title">Job + Schedule Date</div>
+        <div class="card-note">Line items, date picker, save CTA. Dense but readable — designed for field use on a phone.</div>
+        <span class="card-tag t-b tag">Direction B</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/w4SjQM5g" loading="lazy" alt="Jobber profile setup"></div>
+      <div class="card-body">
+        <div class="card-app">Jobber</div>
+        <div class="card-title">Profile / Account Setup</div>
+        <div class="card-note">Name, phone, consent checkbox, green Next. Progress bar top. Clean professional onboarding.</div>
+        <span class="card-tag t-b tag">Direction B</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/fTVVYUnD" loading="lazy" alt="Jira task attachments"></div>
+      <div class="card-body">
+        <div class="card-app">Jira Cloud</div>
+        <div class="card-title">Task + Attachments</div>
+        <div class="card-note">Expandable description, attachment thumbnails, add evidence CTA. Enterprise task with file attach.</div>
+        <span class="card-tag t-b tag">Direction B</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/qW4NWaae" loading="lazy" alt="Grok create task"></div>
+      <div class="card-body">
+        <div class="card-app">Grok</div>
+        <div class="card-title">Create Task Form</div>
+        <div class="card-note">Card-based field groups (Schedule, Instructions, Notifications). Calm light grey, logical structure.</div>
+        <span class="card-tag t-b tag">Direction B</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/wGfpmA1B" loading="lazy" alt="ClickUp my work"></div>
+      <div class="card-body">
+        <div class="card-app">ClickUp</div>
+        <div class="card-title">My Work / Date View</div>
+        <div class="card-note">Overdue / Today / Upcoming groups, blue accent, row list with date anchors. Practical work view.</div>
+        <span class="card-tag t-b tag">Direction B</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/3hpAWE2k" loading="lazy" alt="Grab Driver my courses"></div>
+      <div class="card-body">
+        <div class="card-app">Grab Driver</div>
+        <div class="card-title">My Courses + Certs</div>
+        <div class="card-note">Green header tabs, 4/4 completed stat cards, certificate badge link. Learner portal feel.</div>
+        <span class="card-tag t-b tag">Direction B</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/NXzckaKr" loading="lazy" alt="Dave green progress form"></div>
+      <div class="card-body">
+        <div class="card-app">Dave</div>
+        <div class="card-title">Step Form with Progress Bar</div>
+        <div class="card-note">Bold green progress fill bar, full-bleed CTA. Confident, directive step-by-step onboarding style.</div>
+        <span class="card-tag t-b tag">Direction B</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- C — DARK HIGH CONTRAST                          -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num dark">C</div>
+    <div class="sec-meta">
+      <div class="sec-cat">Visual Direction C</div>
+      <h2 class="sec-title">Dark / High-Contrast Utility</h2>
+      <p class="sec-desc">Pure black or deep navy backgrounds with white text and vivid accent colours. Popular with Starlink, Apple Fitness, Peloton. On OLED screens, this can outperform light UIs in direct sunlight on a building site. Communicates precision, technology, and seriousness.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="callout-ico">☀️</span>
+    <div class="callout-txt"><strong>Outdoor readability advantage</strong>OLED dark mode can be more legible in direct sunlight than white backgrounds. If most users are on modern iPhones or Samsung devices with OLED screens, this direction has a real practical advantage.</div>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/kxo5ZBHw" loading="lazy" alt="Starlink status"></div>
+      <div class="card-body">
+        <div class="card-app">Starlink</div>
+        <div class="card-title">Status Dashboard</div>
+        <div class="card-note">Pure black, status indicator, clean icon menu rows. Precise, technical, trusted. Excellent reference.</div>
+        <span class="card-tag t-c tag">Direction C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/6LB6F52Y" loading="lazy" alt="Opal dark home"></div>
+      <div class="card-body">
+        <div class="card-app">Opal</div>
+        <div class="card-title">Dark Home Dashboard</div>
+        <div class="card-note">Deep black, rounded section cards, subtle borders. Section label + cards per block. Sleek and assertive.</div>
+        <span class="card-tag t-c tag">Direction C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/2GXC2AqR" loading="lazy" alt="Todoist dark sidebar"></div>
+      <div class="card-body">
+        <div class="card-app">Todoist</div>
+        <div class="card-title">Dark Project List</div>
+        <div class="card-note">Near-black bg, red accent, project list with count. Excellent job card portfolio in dark mode.</div>
+        <span class="card-tag t-c tag">Direction C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/5NhHiKCJ" loading="lazy" alt="Apple Fitness dark"></div>
+      <div class="card-body">
+        <div class="card-app">Apple Fitness</div>
+        <div class="card-title">Dark Activity Summary</div>
+        <div class="card-note">Dark cards, neon-green accent. Sessions, Awards, Trends. Award rings map to NVQ completion badges.</div>
+        <span class="card-tag t-c tag">Direction C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/Xs1hRnrs" loading="lazy" alt="Peloton milestones"></div>
+      <div class="card-body">
+        <div class="card-app">Peloton</div>
+        <div class="card-title">Dark Milestone Progress</div>
+        <div class="card-note">Bronze / Silver / Gold badges on dark progress bar. Maps to NVQ competency levels.</div>
+        <span class="card-tag t-c tag">Direction C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/cpk627jV" loading="lazy" alt="Brightmind dark badges"></div>
+      <div class="card-body">
+        <div class="card-app">Brightmind</div>
+        <div class="card-title">Dark Badge Progress</div>
+        <div class="card-note">Deep navy, flame streak icon, gold circular counter, geometric badge grid. Motivating dark progress UI.</div>
+        <span class="card-tag t-c tag">Direction C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/S6FOGPUB" loading="lazy" alt="Todoist dark record audio"></div>
+      <div class="card-body">
+        <div class="card-app">Todoist</div>
+        <div class="card-title">Dark Audio Recorder</div>
+        <div class="card-note">Full black canvas, red record dot, timer, play/stop controls. How a dark-mode voice note looks.</div>
+        <span class="card-tag t-c tag">Direction C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/aemhHlb0" loading="lazy" alt="Pillowtalk transcribing dark"></div>
+      <div class="card-body">
+        <div class="card-app">pillowtalk</div>
+        <div class="card-title">Dark Transcription Screen</div>
+        <div class="card-note">Pure black, abstract waveform graphic, "transcribing audio..." caption. Atmospheric dark voice UI.</div>
+        <span class="card-tag t-c tag">Direction C</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- D — ENTERPRISE COMPLIANCE                       -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num amber">D</div>
+    <div class="sec-meta">
+      <div class="sec-cat">Visual Direction D</div>
+      <h2 class="sec-title">Enterprise Compliance Tool</h2>
+      <p class="sec-desc">Dense, accuracy-forward layouts used in regulated industries — fintech, HR, insurance. Bold section headers, mandatory checkbox rows, warning banners, dashed upload zones, and explicit "Required*" labels. Signals seriousness and regulatory compliance to procurement teams.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="callout-ico">📋</span>
+    <div class="callout-txt"><strong>Best for B2B buyer confidence, harder for daily tradesperson use</strong>If the primary sales conversation is with Approved Centres or employers rather than individual apprentices, this direction signals trust. Risk: it can feel bureaucratic to use on-site daily.</div>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/MdRpIiAf" loading="lazy" alt="Deel compliance docs"></div>
+      <div class="card-body">
+        <div class="card-app">Deel</div>
+        <div class="card-title">Compliance Documents</div>
+        <div class="card-note">Mandatory / Optional checkboxes, amber warning card, dashed upload zone. Exact enterprise compliance pattern.</div>
+        <span class="card-tag t-d tag">Direction D</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/wwnt4eg4" loading="lazy" alt="Wealthsimple checklist"></div>
+      <div class="card-body">
+        <div class="card-app">Wealthsimple</div>
+        <div class="card-title">Regulatory Checklist</div>
+        <div class="card-note">Long-form statement checkboxes, body-copy explanation, Continue CTA. NVQ assessor declaration flow.</div>
+        <span class="card-tag t-d tag">Direction D</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/ESrBXtkG" loading="lazy" alt="Turo safety inspections"></div>
+      <div class="card-body">
+        <div class="card-app">Turo</div>
+        <div class="card-title">Safety & Inspections</div>
+        <div class="card-note">Requirements list, Submit Inspection action, resource links. Clean section-based compliance page.</div>
+        <span class="card-tag t-d tag">Direction D</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/3Lr546ZW" loading="lazy" alt="TaskRabbit safety agreement"></div>
+      <div class="card-body">
+        <div class="card-app">TaskRabbit</div>
+        <div class="card-title">Safety Agreement</div>
+        <div class="card-note">Shield icon, bold heading, tick-marked checklist, "I Accept" CTA. Honest direct compliance confirmation.</div>
+        <span class="card-tag t-d tag">Direction D</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/HtdHNFXr" loading="lazy" alt="Wise document upload"></div>
+      <div class="card-body">
+        <div class="card-app">Wise</div>
+        <div class="card-title">Document Upload Required</div>
+        <div class="card-note">Numbered requirements list above upload field, uploading state indicator. Guidance + action in one screen.</div>
+        <span class="card-tag t-d tag">Direction D</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/RT1cPfmg" loading="lazy" alt="Deel add person contract"></div>
+      <div class="card-body">
+        <div class="card-app">Deel</div>
+        <div class="card-title">Contractor Onboarding Form</div>
+        <div class="card-note">Section-grouped form: personal details → contract type → compliance docs. Structured multi-section layout.</div>
+        <span class="card-tag t-d tag">Direction D</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/PjVtBSTn" loading="lazy" alt="Stake identification form"></div>
+      <div class="card-body">
+        <div class="card-app">Stake</div>
+        <div class="card-title">ID Verification Form</div>
+        <div class="card-note">ID type, state, expiry, licence number fields. "Required by law" header. Regulated data entry pattern.</div>
+        <span class="card-tag t-d tag">Direction D</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/uOHDLFRc" loading="lazy" alt="KOHO step 2 of 5"></div>
+      <div class="card-body">
+        <div class="card-app">KOHO</div>
+        <div class="card-title">Step 2/5 Data Entry</div>
+        <div class="card-note">"Step X/Y" counter, blue progress bar, legal fields, lock encryption badge below CTA. Regulated fintech feel.</div>
+        <span class="card-tag t-d tag">Direction D</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- E — STEP-BY-STEP WIZARD FLOWS                   -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num pink">E</div>
+    <div class="sec-meta">
+      <div class="sec-cat">Visual Direction E</div>
+      <h2 class="sec-title">Step-by-Step Wizard Flows</h2>
+      <p class="sec-desc">Multi-step forms with clear progress indicators — pill chains, step counters (3 of 4), filled progress bars, or numbered section lists. Used across healthcare, fintech, and trade apps for any complex onboarding or data capture sequence. Maps directly to the MOS job card creation flow and evidence submission process.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="callout-ico">↗</span>
+    <div class="callout-txt"><strong>Pick one progress indicator style for consistency</strong>The client should choose between step pill chains (Chime), filled progress bars (Dave/KOHO), "X of N" text counters (Turo), or numbered section lists (Hims). Mixing styles adds confusion.</div>
+  </div>
+  <div class="grid grid-wide">
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/wpC77m33" loading="lazy" alt="Chime 3-step icon chain"></div>
+      <div class="card-body">
+        <div class="card-app">Chime</div>
+        <div class="card-title">3-Step Icon Progress Chain</div>
+        <div class="card-note">Icon → icon → icon chain with labels (Basic Info, Verification, You're in!). Clean horizontal pill chain.</div>
+        <span class="card-tag t-e tag">Direction E</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/w1kOohDA" loading="lazy" alt="Everyday Rewards 3 of 4"></div>
+      <div class="card-body">
+        <div class="card-app">Everyday Rewards</div>
+        <div class="card-title">"3 of 4" Step Counter</div>
+        <div class="card-note">Top-right "3 OF 4" counter, orange progress bar, clean field + Yes/No toggle, Continue CTA.</div>
+        <span class="card-tag t-e tag">Direction E</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/4Jmhcz8U" loading="lazy" alt="Hers multi-step consultation"></div>
+      <div class="card-body">
+        <div class="card-app">Hers</div>
+        <div class="card-title">Multi-Step Consultation</div>
+        <div class="card-note">Teal segmented progress bar fills across steps. Section label above question + field. Calm clinical feel.</div>
+        <span class="card-tag t-e tag">Direction E</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/DcK80SLk" loading="lazy" alt="Hims 3-section profile"></div>
+      <div class="card-body">
+        <div class="card-app">Hims</div>
+        <div class="card-title">Numbered Section Overview</div>
+        <div class="card-note">Gradient circle number → section name list before starting. Clear visual summary of what's ahead.</div>
+        <span class="card-tag t-e tag">Direction E</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/6Aq1NC4E" loading="lazy" alt="Stake your details dots"></div>
+      <div class="card-body">
+        <div class="card-app">Stake</div>
+        <div class="card-title">Dot Progress Indicator</div>
+        <div class="card-note">Dash-dot progress row at top, minimal clean form fields, large Continue pill CTA. Understated elegance.</div>
+        <span class="card-tag t-e tag">Direction E</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/r9JnfJwu" loading="lazy" alt="Stake full name confirm"></div>
+      <div class="card-body">
+        <div class="card-app">Stake</div>
+        <div class="card-title">Confirm Step with Checkbox</div>
+        <div class="card-note">Multiple labelled fields, "I confirm this matches my ID" tick, black Continue pill. Clean final step pattern.</div>
+        <span class="card-tag t-e tag">Direction E</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/7arAEZ4S" loading="lazy" alt="Turo X of N photos"></div>
+      <div class="card-body">
+        <div class="card-app">Turo</div>
+        <div class="card-title">"Step N" + Progress Bar</div>
+        <div class="card-note">Section title in nav, thin coloured progress bar below, step instructions then action. Used across evidence steps.</div>
+        <span class="card-tag t-e tag">Direction E</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/8CtafQwP" loading="lazy" alt="Grubhub 3 of 3 submit"></div>
+      <div class="card-body">
+        <div class="card-app">Grubhub</div>
+        <div class="card-title">"3 of 3" with Upload + Submit</div>
+        <div class="card-note">Step counter, dashed upload zone, greyed-out Submit until complete. Final step confirmation pattern.</div>
+        <span class="card-tag t-e tag">Direction E</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- KEY SCREEN: CRITERIA LISTS                      -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num" style="background:#475569; font-size:18px;">🗂</div>
+    <div class="sec-meta">
+      <div class="sec-cat">Key Screen Type — All Directions</div>
+      <h2 class="sec-title">Criteria List Grouped by Outcomes</h2>
+      <p class="sec-desc">The core daily screen: a scrollable list of NVQ criteria grouped by learning outcome. Key requirements: bold outcome headers, item counts per group, collapsible sections, checkbox rows, and overall progress visible at the top. These examples show the best-in-class patterns.</p>
+    </div>
+  </div>
+  <div class="grid grid-wide">
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/HrKrPCNX" loading="lazy" alt="Target 0 of 85 checklist"></div>
+      <div class="card-body">
+        <div class="card-app">Target</div>
+        <div class="card-title">Overall Progress + Accordion</div>
+        <div class="card-note">"0 of 85 items completed", master progress bar, then each section showing X/N. Perfect NVQ top-level view.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/etoWUWVx" loading="lazy" alt="Apple Reminders grouped"></div>
+      <div class="card-body">
+        <div class="card-app">Apple Reminders</div>
+        <div class="card-title">Grouped List with Headers</div>
+        <div class="card-note">Bold group headers with chevron toggles, circle checkboxes, add row placeholder. Minimal iOS pattern.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/TU8lRc5y" loading="lazy" alt="Amazon Alexa grouped checklist"></div>
+      <div class="card-body">
+        <div class="card-app">Amazon Alexa</div>
+        <div class="card-title">Categorised Checklist</div>
+        <div class="card-note">All-caps section headers with count badge (2), checkbox rows, completed group below. Crisp and scannable.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/akMjkGpE" loading="lazy" alt="Khan Academy grouped selector"></div>
+      <div class="card-body">
+        <div class="card-app">Khan Academy</div>
+        <div class="card-title">Category Group Selector</div>
+        <div class="card-note">Category headers, selectable rows with checkboxes, "See All (N)" disclosure. Handles long criteria lists well.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/Vnp7YVAc" loading="lazy" alt="Shopee accordion list"></div>
+      <div class="card-body">
+        <div class="card-app">Shopee</div>
+        <div class="card-title">Accordion Parent → Child</div>
+        <div class="card-note">Parent outcome with expand toggle, indented child criteria items each with checkbox. Unit → Criteria hierarchy.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/6lXLjQIw" loading="lazy" alt="Duolingo achievements list"></div>
+      <div class="card-body">
+        <div class="card-app">Duolingo</div>
+        <div class="card-title">Achievement Criteria List</div>
+        <div class="card-note">Badge icon + name + progress bar + X/N count per row in a card group. Visual criteria progress list.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/zBkeW8kV" loading="lazy" alt="Duolingo full achievement list"></div>
+      <div class="card-body">
+        <div class="card-app">Duolingo</div>
+        <div class="card-title">Full Criteria with Progress Bars</div>
+        <div class="card-note">Named criteria rows, each with description, progress bar, and X/N fraction. High-density scrollable list.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/tvkogzAr" loading="lazy" alt="Quizlet lifetime badges"></div>
+      <div class="card-body">
+        <div class="card-app">Quizlet</div>
+        <div class="card-title">Milestone Badge Grid</div>
+        <div class="card-note">Badge grid with earned vs locked states, "View all" disclosure. Visual milestone overview per outcome.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- KEY SCREEN: EVIDENCE CAPTURE                    -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num" style="background:#475569; font-size:18px;">📷</div>
+    <div class="sec-meta">
+      <div class="sec-cat">Key Screen Type — All Directions</div>
+      <h2 class="sec-title">Evidence Capture — Photo &amp; Document Upload</h2>
+      <p class="sec-desc">The moment of truth: the tradesperson photographs their completed work or uploads a supporting document. Needs one-tap camera access, clear before/after labels, numbered photo slots, progress count, "Required*" labelling, and action sheet for source selection (camera / gallery / files).</p>
+    </div>
+  </div>
+  <div class="grid grid-wide">
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/7arAEZ4S" loading="lazy" alt="Turo before after photos"></div>
+      <div class="card-body">
+        <div class="card-app">Turo</div>
+        <div class="card-title">Before &amp; After Evidence</div>
+        <div class="card-note">Progress bar top, "Before" and "After" labelled sections each with Add Photos CTA. Required* tag. Exact MOS pattern.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/ZPVAFJ1s" loading="lazy" alt="Turo add photos action sheet"></div>
+      <div class="card-body">
+        <div class="card-app">Turo</div>
+        <div class="card-title">Add Photos Action Sheet</div>
+        <div class="card-note">"Select from trip photos / Take photos / Upload from Photos / Cancel" — three-choice bottom sheet for evidence source.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/njCA2TfC" loading="lazy" alt="Turo photo evidence required"></div>
+      <div class="card-body">
+        <div class="card-app">Turo</div>
+        <div class="card-title">Photo Evidence Required</div>
+        <div class="card-note">Section heading, description, "Photo evidence Required" label, photo upload grid slots, Continue CTA.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/SchSX3Yf" loading="lazy" alt="Turo tolls photo evidence"></div>
+      <div class="card-body">
+        <div class="card-app">Turo</div>
+        <div class="card-title">Section + Photo Evidence</div>
+        <div class="card-note">Section content above, "Photo evidence Required" section below with Add Photos. Action sheet visible. Multi-use pattern.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/m7HVGx9U" loading="lazy" alt="Grailed photo grid picker"></div>
+      <div class="card-body">
+        <div class="card-app">Grailed</div>
+        <div class="card-title">Photo Grid Picker</div>
+        <div class="card-note">Numbered thumbnails in a grid, camera icon, "ADD • 6" batch CTA. Best for selecting multiple evidence photos.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/pSs5us0m" loading="lazy" alt="Binance report + photo evidence"></div>
+      <div class="card-body">
+        <div class="card-app">Binance</div>
+        <div class="card-title">Report + Photo (0/4)</div>
+        <div class="card-note">Text details field above, "Photo evidence (0/4)" section with upload placeholder below. Minimal empty starting state.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/8CtafQwP" loading="lazy" alt="Grubhub upload screenshot"></div>
+      <div class="card-body">
+        <div class="card-app">Grubhub</div>
+        <div class="card-title">Upload Screenshot / File</div>
+        <div class="card-note">Step counter, instruction text, dashed-border camera zone with icon + label. Clear empty state for upload.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/HtdHNFXr" loading="lazy" alt="Wise upload requirements"></div>
+      <div class="card-body">
+        <div class="card-app">Wise</div>
+        <div class="card-title">Document Requirements + Upload</div>
+        <div class="card-note">Numbered checklist of requirements above a file upload zone. Guidance then action — clear sequential pattern.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- KEY SCREEN: VOICE TO TEXT                       -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num" style="background:#475569; font-size:18px;">🎙</div>
+    <div class="sec-meta">
+      <div class="sec-cat">Key Screen Type — All Directions</div>
+      <h2 class="sec-title">Voice to Text — Audio Evidence</h2>
+      <p class="sec-desc">On building sites, tradespeople often have gloved or dirty hands. Voice-to-text note capture is essential for fast, accurate evidence descriptions. These screens show the full range — from minimal microphone-only UIs to full live-transcription views with editing and speaker labels.</p>
+    </div>
+  </div>
+  <div class="grid grid-wide">
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/9emY5tgG" loading="lazy" alt="Otter.ai now recording"></div>
+      <div class="card-body">
+        <div class="card-app">Otter.ai</div>
+        <div class="card-title">Live Recording Screen</div>
+        <div class="card-note">Pure white, "Now recording…" placeholder, dot waveform, stop button + camera attach. Zero distraction UI.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/yyu0V8ai" loading="lazy" alt="Otter.ai summary keywords"></div>
+      <div class="card-body">
+        <div class="card-app">Otter.ai</div>
+        <div class="card-title">Summary Keywords View</div>
+        <div class="card-note">Keyword chips at top, timestamped speaker paragraphs, playback bar. Post-recording evidence review view.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/uHp674AI" loading="lazy" alt="Otter.ai live transcript"></div>
+      <div class="card-body">
+        <div class="card-app">Otter.ai</div>
+        <div class="card-title">Live Transcription</div>
+        <div class="card-note">Real-time text populates below title field. Timestamped speaker paragraphs, stop + camera + highlight controls.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/gfforr7i" loading="lazy" alt="Otter.ai editable transcript"></div>
+      <div class="card-body">
+        <div class="card-app">Otter.ai</div>
+        <div class="card-title">Editable Transcript + Playback</div>
+        <div class="card-note">Speaker paragraphs with playback, highlight selection, keyboard for editing. Full review + edit workflow.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/jdjjIRPi" loading="lazy" alt="stoic voice + transcribe toggle"></div>
+      <div class="card-body">
+        <div class="card-app">stoic.</div>
+        <div class="card-title">Record + Transcribe Toggle</div>
+        <div class="card-note">Waveform card, transcribed text body, playback controls + "Transcribe" toggle switch. User controls auto-transcribe.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/JDvSCT9D" loading="lazy" alt="Manus voice record input"></div>
+      <div class="card-body">
+        <div class="card-app">Manus</div>
+        <div class="card-title">Voice Input Waveform</div>
+        <div class="card-note">Off-white bg, large question headline, waveform + timer in bottom sheet input, send CTA. Elegant voice input.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/DKR23129" loading="lazy" alt="X voice record microphone"></div>
+      <div class="card-body">
+        <div class="card-app">X (Twitter)</div>
+        <div class="card-title">Large Microphone Record</div>
+        <div class="card-note">Full-screen white, avatar, "What's happening? Hit record.", large purple mic button. Maximum simplicity.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/JAagd7qI" loading="lazy" alt="OpenPhone waveform recording"></div>
+      <div class="card-body">
+        <div class="card-app">OpenPhone</div>
+        <div class="card-title">Waveform + Timer Recording</div>
+        <div class="card-note">White canvas, animated grey waveform, orange timer badge, stop circle button. Elegant minimal recorder.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- KEY SCREEN: PROGRESS / CERTIFICATION            -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="sec-num" style="background:#475569; font-size:18px;">🏆</div>
+    <div class="sec-meta">
+      <div class="sec-cat">Key Screen Type — All Directions</div>
+      <h2 class="sec-title">Progress Tracking &amp; Qualification Status</h2>
+      <p class="sec-desc">The learner's view of their overall NVQ journey — units completed, evidence submitted, assessor sign-offs pending, and certificates earned. These screens show how the best learning apps motivate users through visible progress, milestone badges, and clear "what's next" indicators without overwhelming them.</p>
+    </div>
+  </div>
+  <div class="grid grid-wide">
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/UivY9XSl" loading="lazy" alt="Mimo professional certificates"></div>
+      <div class="card-body">
+        <div class="card-app">Mimo</div>
+        <div class="card-title">Professional Certificates List</div>
+        <div class="card-note">Badge icon + certificate name + circular % progress per row. "Certificates of Completion" section below. NVQ unit list.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/IhhfWjdY" loading="lazy" alt="Mimo unlock certificate"></div>
+      <div class="card-body">
+        <div class="card-app">Mimo</div>
+        <div class="card-title">Certificate Progress State</div>
+        <div class="card-note">Badge artwork, "0% – You're on the right track!", "GET CERT…" CTA greyed until complete. In-progress NVQ unit.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/Mc3vdm2H" loading="lazy" alt="Skillshare achievements"></div>
+      <div class="card-body">
+        <div class="card-app">Skillshare</div>
+        <div class="card-title">Certificates &amp; Badges</div>
+        <div class="card-note">Profile header, "Certificates" section with course + date, "Badges" section below. Clean learner portfolio view.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/6lXLjQIw" loading="lazy" alt="Duolingo achievements profile"></div>
+      <div class="card-body">
+        <div class="card-app">Duolingo</div>
+        <div class="card-title">Achievement Profile</div>
+        <div class="card-note">Profile card, "Achievements" section, badge + name + description + X/N progress bar. Motivating progress overview.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/3czI3Whs" loading="lazy" alt="Elevate achievements"></div>
+      <div class="card-body">
+        <div class="card-app">Elevate</div>
+        <div class="card-title">Session Achievements</div>
+        <div class="card-note">Post-session: achievement badge earned, "You trained in N new skills", share progress CTA. NVQ evidence submit success state.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/l4ayc8Ot" loading="lazy" alt="Balance badges light"></div>
+      <div class="card-body">
+        <div class="card-app">Balance</div>
+        <div class="card-title">Badges &amp; Skills Profile</div>
+        <div class="card-note">Profile tab, badge card list with icon + name + thin progress bar. Very readable light theme for qualification overview.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/8U4w9qWH" loading="lazy" alt="stoic badges stats"></div>
+      <div class="card-body">
+        <div class="card-app">stoic.</div>
+        <div class="card-title">Badge + Stats Sheet</div>
+        <div class="card-note">Tab switcher (Badges / Stats), badge card rows with X/N counter, "See All" link. Compact achievement view.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://mobbin.com/api/mcp/short/pz1tHYwX" loading="lazy" alt="Finch weekly milestones"></div>
+      <div class="card-body">
+        <div class="card-app">Finch</div>
+        <div class="card-title">Weekly Milestone Stars</div>
+        <div class="card-note">Star badge progress bar, "2 more days to earn the next star", weekly calendar dot view. Lightweight daily motivation.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 </main>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p>MOS Training — NVQ Evidence Capture App &nbsp;·&nbsp; Mood Board prepared May 2026</p>
-  <p>All screens sourced from <a href="https://mobbin.com" style="color:var(--accent);">Mobbin</a> — real app UI references</p>
+<footer>
+  <p>MOS Training — NVQ Evidence Capture App &nbsp;·&nbsp; Mood Board · May 2026</p>
+  <p>All screens from <a href="https://mobbin.com" target="_blank">Mobbin</a> — real production app UI references</p>
 </footer>
 
 </body>
