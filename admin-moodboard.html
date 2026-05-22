@@ -44,7 +44,7 @@
   .sec-title { font-size: 22px; font-weight: 800; letter-spacing: -.01em; margin-bottom: 6px; }
   .sec-desc { font-size: 13.5px; color: var(--sub); line-height: 1.65; max-width: 780px; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 
   .card { background: var(--surface); border-radius: 14px; border: 1px solid var(--border); overflow: hidden; transition: box-shadow .15s, transform .15s; }
   .card:hover { box-shadow: 0 10px 32px rgba(0,0,0,.11); transform: translateY(-3px); }
@@ -58,7 +58,7 @@
   @media (max-width: 900px) {
     .hdr, .dir-bar, main, footer, .breadcrumb { padding-left: 20px; padding-right: 20px; }
     .hdr h1 { font-size: 28px; }
-    .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    .grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
